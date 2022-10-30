@@ -98,7 +98,7 @@ export default function Signup() {
             <button type="submit">Sign up</button>
           </form>
           <p className="newAccount">
-            Allready have an account? <Link to="/login"> Sign In!</Link>
+            Already have an account? <Link to="/login"> Sign In!</Link>
           </p>
         </SignLayout>
       </div>
