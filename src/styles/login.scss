@@ -1,0 +1,70 @@
+// #2553ff
+
+.loginPage {
+  color: white;
+  .login {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    padding: 0px;
+  }
+  .account {
+    font-size: 45px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+  .label {
+    margin-bottom: 5px;
+  }
+  .inputBox {
+    .marginButton {
+      margin-bottom: 40px;
+    }
+
+    input {
+      color: #102674;
+      font-size: 20px;
+      outline: none;
+      border: none;
+      background-color: #2554ff;
+      border-bottom: 1px solid #95a6e4;
+      width: 350px;
+      padding: 7px 0px;
+      &::placeholder {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.377);
+      }
+      &:focus {
+        color: #9eb1f5;
+      }
+    }
+  }
+  button {
+    margin-top: 50px;
+    padding: 7px 40px;
+    outline: none;
+    color: #2554ff;
+    font-weight: 600;
+    font-size: 18px;
+    border: 1px solid white;
+    &:hover {
+      background-color: #6787fd;
+      color: white;
+      border: 1px solid white;
+    }
+  }
+  .newAccount {
+    color: white;
+    margin-top: 20px;
+    a {
+      margin-left: 10px;
+      color: white;
+    }
+  }
+  .error {
+    color: red;
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+}
