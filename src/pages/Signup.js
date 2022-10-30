@@ -13,11 +13,11 @@ export default function Signup() {
   const [error, setError] = useState("");
   const { currentUser, dispatch } = useContext(AuthContext);
 
-  const navitage = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (currentUser) {
-      navitage("/");
+        navigate("/");
     }
   }, []);
 
@@ -40,7 +40,7 @@ export default function Signup() {
           const user = userCredential.user;
           console.log(user);
           dispatch({ type: "LOGIN", payload: user });
-          navitage("/");
+          navigate("/");
         })
         .catch((error) => {
           console.log(error);
