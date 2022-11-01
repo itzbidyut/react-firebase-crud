@@ -1,4 +1,13 @@
 // #2553ff
 
 .homePage {
+  padding-top: 100px;
+  .img-table {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+}
+.pointer {
+  cursor: pointer;
 }

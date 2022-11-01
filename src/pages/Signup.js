@@ -7,6 +7,8 @@ import SignLayout from "../components/SignLayout";
 import { Link } from "react-router-dom";
 
 export default function Signup() {
+  const [displayName, setDisplayName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
@@ -17,9 +19,9 @@ export default function Signup() {
 
   useEffect(() => {
     if (currentUser) {
-        navigate("/");
+      navigate("/");
     }
-  }, []);
+  }, [currentUser, navigate]);
 
   const passwordHandle = (e) => {
     if (e.target.value.length > 0) {
@@ -34,8 +36,19 @@ export default function Signup() {
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+    console.log("displayName----", displayName);
+    console.log("phoneNumber----", phoneNumber);
+    console.log("email----", email);
+
     if (password === password2) {
-      createUserWithEmailAndPassword(auth, email, password)
+      createUserWithEmailAndPassword(
+        auth,
+        email,
+        password,
+        displayName,
+        phoneNumber
+      )
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
@@ -66,6 +79,28 @@ export default function Signup() {
           <p className="account">New account</p>
           <form onSubmit={handleLogin}>
             <div className="inputBox">
+              <p className="label"> Name :</p>
+
+              <input
+                type="text"
+                placeholder="enter your name"
+                onChange={(e) => setDisplayName(e.target.value)}
+                required
+                className="marginButton"
+              />
+            </div>
+            <div className="inputBox">
+              <p className="label">Phone :</p>
+
+              <input
+                type="number"
+                placeholder="enter your Phone number"
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                required
+                className="marginButton"
+              />
+            </div>
+            <div className="inputBox">
               <p className="label">Email :</p>
 
               <input
@@ -77,6 +112,7 @@ export default function Signup() {
               />
             </div>
             <div className="inputBox">
+              <p className="label">Password :</p>
               <input
                 type="password"
                 placeholder="enter your password"
@@ -86,14 +122,14 @@ export default function Signup() {
               />
             </div>
             <div className="inputBox">
+              <p className="label">Confirm Password :</p>
               <input
                 type="password"
-                placeholder="confirm password"
+                placeholder="Confirm password"
                 onChange={(e) => setPassword2(e.target.value)}
                 required
               />
             </div>
-
             {error ? <p className="error"> {error}</p> : <></>}
             <button type="submit">Sign up</button>
           </form>

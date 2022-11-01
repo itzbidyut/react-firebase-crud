@@ -3,7 +3,7 @@
   top: 0px;
   left: 0px;
   width: 100%;
-  background-color: blueviolet;
+  background-color: #2554ff;
   padding: 12px;
   .container {
     display: flex;
@@ -25,5 +25,9 @@
         margin-bottom: 0px;
       }
     }
+  }
+  .white {
+    color: white;
+    margin-left: 10px;
   }
 }

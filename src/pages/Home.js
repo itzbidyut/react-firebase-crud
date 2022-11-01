@@ -1,22 +1,27 @@
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContect";
+import { useState, useEffect } from "react";
 import "../styles/home.scss";
 import Navbar from "../components/Navbar";
-
+import UserList from "../components/UserList";
+import AddNew from "../components/AddNew";
 export default function Home() {
-  const { currentUser, dispatch } = useContext(AuthContext);
-  const logout = () => {
-    dispatch({ type: "LOGOUT", payload: null });
-  };
+ 
+
+
+
   return (
     <>
       <Navbar />
       <div className="homePage">
-        <div className="container mt-5">
-          Home <br></br> <br></br> <br></br>
-          <button onClick={logout}>Logout</button>
-          <br></br> <br></br> <br></br> <br></br>
-          {currentUser.email}
+        <div className="container ">
+          <div className="row">
+            <div className="col-6">
+              <AddNew />
+             
+            </div>
+            <div className="col-6">
+              <UserList />
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -27,7 +27,11 @@ export default function Navbar() {
             <></>
           )}
           {currentUser ? (
-            <></>
+            <>
+              <p>
+                Wellcome <span className="white"> {currentUser.email}</span>
+              </p>
+            </>
           ) : (
             <>
               <Link to="/login">

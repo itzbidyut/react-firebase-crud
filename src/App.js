@@ -3,7 +3,7 @@ import "./App.css";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
-
+// import ResetPassword from "./pages/ResetPassword";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContect";
 
@@ -14,7 +14,6 @@ function App() {
     return currentUser ? children : <Navigate to="/login" />;
   };
 
-  console.log(currentUser);
   return (
     <>
       <BrowserRouter>
@@ -29,6 +28,7 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          {/* <Route path="/reset-password" element={<ResetPassword />} /> */}
         </Routes>
       </BrowserRouter>
     </>
